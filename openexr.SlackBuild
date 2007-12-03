@@ -40,7 +40,7 @@ bin_perms $PKG
 ( cd $SRC; create_docs $PKG $NAME-$VERSION )
 rm -f $PKG/usr/share/doc/OpenEXR-$VERSION/*.pdf
 mv $PKG/usr/share/doc/OpenEXR-$VERSION/examples $PKG/usr/doc/$NAME-$VERSION/
-rmdir $PKG/usr/share/doc/OpenEXR-$VERSION
+rm -rf $PKG/usr/share/doc
 
 mkdir -p $PKG/install
 install -m 644 $CWD/slack-desc     $PKG/install/slack-desc
