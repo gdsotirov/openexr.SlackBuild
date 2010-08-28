@@ -1,11 +1,16 @@
-openexr: OpenEXR ()
+openexr: OpenEXR (A high dynamic-range image format)
 openexr:
 openexr: OpenEXR is a high dynamic-range (HDR) image file format developed
 openexr: by Industrial Light & Magic for use in computer imaging
 openexr: applications.
 openexr: OpenEXR is used by ILM on all motion pictures currently in
 openexr: production. It has become ILM's main image file format.
-openexr:
+openexr: OpenEXR's features include:
+openexr:   * Higher dynamic range and color precision than existing 8- and
+openexr:     10-bit image file formats;
+openexr:   * Support for 16-bit floating-point, 32-bit floating-point, and
+openexr:     32-bit integer pixels;
+openexr:   * Multiple lossless image compression algorithms.
+openexr:   * Extensibility.
 openexr:
 openexr: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
-openexr:
