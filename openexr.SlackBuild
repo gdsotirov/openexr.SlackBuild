@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # 
-# $Id: openexr.SlackBuild,v 1.5 2012/09/02 08:36:53 gsotirov Exp $
+# $Id: openexr.SlackBuild,v 1.6 2012/09/02 08:39:28 gsotirov Exp $
 #
 
 . ../../slack-package.conf
@@ -61,6 +61,7 @@ CXXFLAGS=$SLKCFLAGS \
 ./configure --build=$ARCH-slackware-linux \
             --host=$ARCH-slackware-linux \
             --prefix=/usr \
+            --libdir=/usr/lib${LIBDIRSUFFIX} \
             --sysconfdir=/etc \
             --mandir=/usr/man \
             --enable-shared=yes \
