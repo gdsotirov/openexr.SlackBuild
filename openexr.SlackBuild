@@ -17,13 +17,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # 
-# $Id: openexr.SlackBuild,v 1.7 2015/04/19 09:48:42 gsotirov Exp $
+# $Id: openexr.SlackBuild,v 1.8 2015/04/19 10:16:25 gsotirov Exp $
 #
 
 . ../../slack-package.conf
 
 NAME=openexr
-VERSION=2.0.1
+VERSION=2.1.0
 BUILD=${BUILD:-1}
 
 TMP=${TMP:-/tmp}
