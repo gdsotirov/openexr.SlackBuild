@@ -1,14 +1,14 @@
 # Fix patch version and restore SO version back to 22
 # See https://github.com/AcademySoftwareFoundation/openexr/issues/250
-diff -urNad openexr-2.2.1-orig/CMakeLists.txt openexr-2.2.1/CMakeLists.txt
---- openexr-2.2.1-orig/CMakeLists.txt	2017-11-18 01:00:24.000000000 +0200
-+++ openexr-2.2.1/CMakeLists.txt	2017-12-10 13:38:48.999738238 +0200
+diff -urNad openexr-2.2.2-orig/OpenEXR/CMakeLists.txt openexr-2.2.2/OpenEXR/CMakeLists.txt
+--- openexr-2.2.2-orig/OpenEXR/CMakeLists.txt	2020-04-30 20:45:37.000000000 +0300
++++ openexr-2.2.2/OpenEXR/CMakeLists.txt	2020-05-01 13:08:28.184211005 +0300
 @@ -4,7 +4,7 @@
  
  SET(OPENEXR_VERSION_MAJOR "2")
  SET(OPENEXR_VERSION_MINOR "2")
 -SET(OPENEXR_VERSION_PATCH "0")
-+SET(OPENEXR_VERSION_PATCH "1")
++SET(OPENEXR_VERSION_PATCH "2")
  
  SET(OPENEXR_VERSION ${OPENEXR_VERSION_MAJOR}.${OPENEXR_VERSION_MINOR}.${OPENEXR_VERSION_PATCH})
  SET(OPENEXR_VERSION_API ${OPENEXR_VERSION_MAJOR}_${OPENEXR_VERSION_MINOR})
@@ -34,21 +34,22 @@ diff -urNad openexr-2.2.1-orig/CMakeLists.txt openexr-2.2.1/CMakeLists.txt
    OUTPUT_NAME "IlmImfUtil${OPENEXR_LIBSUFFIX}"
    )
    
-diff -urNad openexr-2.2.1-orig/configure openexr-2.2.1/configure
---- openexr-2.2.1-orig/configure	2017-11-18 01:09:24.000000000 +0200
-+++ openexr-2.2.1/configure	2017-12-10 13:39:33.649928968 +0200
-@@ -3174,7 +3174,7 @@
+# Fix compilation error "'nullptr' was not declared in this scope" by enabling C++11 support
+diff -urNad openexr-2.2.2-orig/OpenEXR/IlmImf/Makefile.am openexr-2.2.2/OpenEXR/IlmImf/Makefile.am
+--- openexr-2.2.2-orig/OpenEXR/IlmImf/Makefile.am	2020-04-30 20:45:37.000000000 +0300
++++ openexr-2.2.2/OpenEXR/IlmImf/Makefile.am	2020-05-01 13:35:56.807991844 +0300
+@@ -188,7 +188,7 @@
+ EXTRA_DIST = $(noinst_HEADERS) b44ExpLogTable.cpp b44ExpLogTable.h dwaLookups.cpp dwaLookups.h CMakeLists.txt
  
  
+-INCLUDES = @ILMBASE_CXXFLAGS@ \
++INCLUDES = @ILMBASE_CXXFLAGS@ -std=c++11 \
+ 	   -I$(top_builddir)  \
+ 	   -I$(top_srcdir)/config
  
--LIBTOOL_CURRENT=23
-+LIBTOOL_CURRENT=22
- LIBTOOL_REVISION=0
- LIBTOOL_AGE=0
- LIBTOOL_VERSION=$LIBTOOL_CURRENT:$LIBTOOL_REVISION:$LIBTOOL_AGE
-diff -urNad openexr-2.2.1-orig/configure.ac openexr-2.2.1/configure.ac
---- openexr-2.2.1-orig/configure.ac	2017-11-18 01:00:26.000000000 +0200
-+++ openexr-2.2.1/configure.ac	2017-12-10 13:39:12.173761182 +0200
+diff -urNad openexr-2.2.2-orig/OpenEXR/configure.ac openexr-2.2.2/OpenEXR/configure.ac
+--- openexr-2.2.2-orig/OpenEXR/configure.ac	2020-04-30 20:45:37.000000000 +0300
++++ openexr-2.2.2/OpenEXR/configure.ac	2020-05-01 13:10:13.366456638 +0300
 @@ -16,7 +16,7 @@
  AM_MAINTAINER_MODE
  
