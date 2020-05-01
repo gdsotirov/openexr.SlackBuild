@@ -1,3 +1,5 @@
+# Fix patch version and restore SO version back to 22
+# See https://github.com/AcademySoftwareFoundation/openexr/issues/250
 diff -urNad openexr-2.2.1-orig/CMakeLists.txt openexr-2.2.1/CMakeLists.txt
 --- openexr-2.2.1-orig/CMakeLists.txt	2017-11-18 01:00:24.000000000 +0200
 +++ openexr-2.2.1/CMakeLists.txt	2017-12-10 13:38:48.999738238 +0200
