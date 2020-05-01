@@ -108,7 +108,7 @@ md5sum ${PKGNAME}.txz > ${PKGNAME}.txz.md5
 cat $PKG/install/slack-desc > $PKG_DIR/${PKGNAME}.txt
 
 if [ "$1" == "--cleanup" ]; then
-  rm -r $SRC
+  rm -r $TMP/${PNAME}-${VERSION}
   rm -r $PKG
 fi
 
